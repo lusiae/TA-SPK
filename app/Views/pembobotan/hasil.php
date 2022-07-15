@@ -87,6 +87,31 @@ $db = db_connect(); ?>
 
                                 <a href="<?= site_url('pembobotan/hasil') ?>?token=xyyyx" class="btn btn-sm btn-danger">
                                     <i class="fas fa-trash"></i></i> Hapus Data Rangking </a>
+
+
+                                <form class="form-horizontal" action="<?= site_url('pembobotan/hasil') ?>">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Tahun</label>
+                                            <div class="col-sm-10">
+
+                                                <select name="tahun" class="form-control">
+                                                    <option selected="selected"> Pilih Tahun</option>
+                                                    <?php
+                                                    for ($i = date('Y'); $i >= date('Y') - 32; $i -= 1) {
+                                                        echo "<option value='$i'> $i </option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-default">Cari</button>
+
+                                    </div>
+                                </form>
                             </div>
 
                         </div>
